@@ -1,8 +1,7 @@
 package memento;
 
-
-public class MementoMain {
-    public static void execute() {
+public class Demo {
+    public static void show() {
         Document doc = new Document();
         DocumentHistory history = new DocumentHistory();
 
