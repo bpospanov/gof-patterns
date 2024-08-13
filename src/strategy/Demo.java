@@ -2,9 +2,8 @@ package strategy;
 
 public class Demo {
     public static void show() {
-        var imageStorage = new ImageStorage();
-
-        imageStorage.store("myName", new JpegCompressor(), new BlackAndWhiteFilter());
-        imageStorage.store("myName", new PngCompressor(), new BlackAndWhiteFilter());
+        var chatClient = new ChatClient();
+        chatClient.send("this is message", new DesEncryptionAlgorithm());
+        chatClient.send("this is message", new AesEncryptionAlgorithm());
     }
 }
