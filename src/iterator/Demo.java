@@ -2,15 +2,19 @@ package iterator;
 
 public class Demo {
     public static void show() {
-        var history = new BrowserHistory();
-        history.push("a");
-        history.push("b");
-        history.push("c");
+        Product product1 = new Product(1, "Lawn Mawner");
+        Product product2 = new Product(2, "Scooter");
+        Product product3 = new Product(3, "Dog licker");
 
-        Iterator<String> iterator = history.createIterator();
+        ProductCollection collection = new ProductCollection();
+        collection.add(product1);
+        collection.add(product2);
+        collection.add(product3);
+
+        Iterator<Product> iterator = collection.getIterator();
+
         while (iterator.hasNext()) {
-            var url = iterator.current();
-            System.out.println(url);
+            System.out.println(iterator.current());
             iterator.next();
         }
     }
